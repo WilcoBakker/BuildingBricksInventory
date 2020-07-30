@@ -1,0 +1,59 @@
+<div class="home-page py-2">
+  <h1>Your collection</h1>
+  <div class="container">
+    <h2>Sets</h2>
+    <div class="card-group">
+      <div class="card" *ngFor="let collectionSet of collectionSets | async">
+        <div class="card-header">
+          <small>{{collectionSet.set.id}}</small>
+          <h3>{{collectionSet.set.name}}</h3>
+        </div>
+        <div class="card-body">
+          <img src="{{collectionSet.set.imageUrl}}" />
+        </div>        
+        <div class="card-footer">
+          <p>x{{collectionSet.amount}}</p>
+        </div>
+      </div>
+    </div>
+    <h2>Bricks</h2>
+    <div class="card-group">
+      <div class="card" *ngFor="let collectionBrick of collectionBricks | async">
+        <div class="card-header">        
+          <small>{{collectionBrick.brick.id}}</small>
+          <h3>{{collectionBrick.brick.name}}</h3>
+        </div>
+        <div class="card-body">
+          <img src="{{collectionBrick.brick.imageUrl}}" />
+        </div>
+        <div class="card-footer">
+          <p>x{{collectionBrick.amount}}</p>
+        </div>
+      </div>
+    </div>
+    <h2>Buildable sets</h2>
+    <div class="card-group">
+      <div class="card" *ngFor="let buildableSet of buildableSets | async">
+        <div class="card-header">
+          <small>{{buildableSet.id}}</small>
+          <h3>{{buildableSet.name}}</h3>
+        </div>
+        <div class="card-body">
+          <img src="{{buildableSet.imageUrl}}" />
+        </div>
+      </div>
+    </div>
+    <h2>Unbuildable sets</h2>
+    <div class="card-group">
+      <div class="card" *ngFor="let unbuildableSet of unbuildableSets | async">
+        <div class="card-header">
+          <small>{{unbuildableSet.id}}</small>
+          <h3>{{unbuildableSet.name}}</h3>
+        </div>
+        <div class="card-body">
+          <img src="{{unbuildableSet.imageUrl}}" />
+        </div>
+      </div>
+    </div>
+  </div>
+<div>
