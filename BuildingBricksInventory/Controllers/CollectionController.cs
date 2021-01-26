@@ -87,7 +87,7 @@ namespace BuildingBricksInventory.Controllers
                             var brickInCollection = bricksInCollection.SingleOrDefault(x => x.Brick.Id == setBricks.BrickId);
                             if (brickInCollection != null)
                             {
-                                brickInCollection.Amount += setBricks.Amount;
+                                brickInCollection.Amount += setBricks.Amount * collectionSet.Amount;
                                 continue;
                             }
                             bricksInCollection.Add(new BrickCount
